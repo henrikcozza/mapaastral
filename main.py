@@ -35,16 +35,7 @@ from kerykeion import KrInstance, MakeSvgInstance
 # lng = -40.5030555555556
 # lat = -9.41361111111111
 
-nome = 'Cassio Vilela'
-day = '15'
-mes ='05'
-year ='1982'
-hour = '07'
-minute ='25'
-cidade = 'Varginha. MG'
-timezone = 'America/Sao_Paulo'
-lng = -45.4302777777778
-lat = -21.5513888888889
+
 
 # nome = 'Greta Kelly'
 # day = '12'
@@ -56,10 +47,10 @@ lat = -21.5513888888889
 # timezone = 'America/New_York'
 # lng = -75.1666666666667
 # lat = 39.95
-
-pessoa = KrInstance(nome, int(year), int(mes), int(day), int(hour), int(minute),cidade,lat=lat,lng=lng,  zodiac_type = 'Tropic',online=True, ephemered_file_folder = os.path.dirname(os.path.abspath(__file__))+'\ephemerides')
-# print(pessoa.chiron['house'])
-# import pdb; pdb.set_trace()
-name = MakeSvgInstance(pessoa,template_type='extended',lang='PT')
-name.makeSVG()
-print('fim do programa')
+def generate_chart(nome,year,mes,day,hour,minute,cidade,lat,lng):
+    pessoa = KrInstance(nome, int(year), int(mes), int(day), int(hour), int(minute),cidade,lat=lat,lng=lng,  zodiac_type = 'Tropic',online=True, ephemered_file_folder = os.path.dirname(os.path.abspath(__file__))+'\ephemerides')
+    # print(pessoa.chiron['house'])
+    # import pdb; pdb.set_trace()
+    name = MakeSvgInstance(pessoa,template_type='extended',lang='PT')
+    name.makeSVG()
+    print('fim do programa')
